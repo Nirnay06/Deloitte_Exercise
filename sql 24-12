@@ -276,7 +276,7 @@ group by job_title;
 
 48. 
 
-select job_title,first_name||' '||last_name,(select max(salary) from empl-salary
+select job_title,first_name||' '||last_name,(select max(salary) from employees)-salary
 from employees join jobs using(job_id);
 
 49. 
