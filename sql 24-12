@@ -1,0 +1,226 @@
+1.
+
+select * from jobs
+where min_salary>10000;
+
+2.
+
+select first_name,hire_date
+from employees
+where hire_date between '01-jan-1970' and '31-dec-1995';
+
+3.
+
+select first_name,hire_date from employees e
+where job_id in ('SA_MAN','IT_PROG');
+
+4.
+
+select * from employees
+where hire_date > '01-jan-1997';
+
+5.
+
+select * from employees
+where employee_id in (150,160);
+
+6.
+
+select first_name,salary,commission_pct,hire_date
+from employees
+where salary < 10000;
+
+7.
+
+select job_title,(max_salary - min_salary)
+from jobs
+where max_salary between '10000' and '20000';
+
+8.
+
+select first_name,salary,round(salary,-3)
+from employees;
+
+9.
+
+select * from jobs order by job_title desc;
+
+10.
+
+select * from employees 
+where first_name like 'S%' or last_name like 'S%';
+
+11.
+
+select * from employees where to_char(hire_date,'Mon')='May';
+
+12.
+
+SELECT * FROM employees where commission_pct is null
+and salary between '1000' and '10000' and department_id=30;
+
+13.
+
+select first_name,hire_date,add_months(last_day(hire_date), 1)
+from employees;
+
+14.
+
+select first_name,(to_char(sysdate,'yyyy') - to_char(hire_date,'yyyy')) as "experience"
+from employees;
+
+15.
+
+select first_name from employees where to_char(hire_date,'yyyy') ='2000';
+
+16.
+
+select INITCAP(first_name),initcap(last_name)
+       from employees;
+       
+17.
+
+select regexp_substr(job_title,'[A-z]*') from jobs;
+
+18.
+
+select length(first_name),first_name,last_name from employees
+WHERE INSTR(last_name,'b') > 3;
+
+19.
+
+select upper(first_name),lower(email)
+from employees
+where lower(first_name)=lower(email);
+
+20;
+
+select * from employees
+where to_char(sysdate,'yyyy')=to_char(hire_date,'yyyy');
+
+21;
+
+SELECT round(SysDate - TO_DATE('2011-01-01','YYYY-MM-DD')) FROM dual;
+
+22.
+
+select count(*),to_Char(hire_date,'MM') from employees
+where to_Char(hire_date,'yyyy')=to_char(sysdate,'yyyy')
+group by to_Char(hire_date,'MM')
+order by to_Char(hire_date,'MM');
+
+23.
+
+SELECT manager_id, COUNT(*) 
+	FROM employees 
+  where manager_id is not null
+		GROUP BY manager_id;
+
+
+24.
+
+select employee_id , to_char(add_months(last_day(hire_date), -1))
+from employees;
+
+
+25.
+
+select count(*) from employees
+where to_char(hire_date,'dd')>15;
+
+26.
+
+select country_id, count(city)
+from locations
+group by country_id;
+
+27.
+
+select department_id, avg(salary)
+from employees
+where commission_pct is not null
+group by department_id;
+
+
+28.
+
+select job_id,count(employee_id), sum(salary),(max(salary)-min(salary))
+from employees
+group by job_id;
+
+29.
+
+select job_id
+from employees
+group by job_id
+having avg(salary)>10000;
+
+30.
+
+select to_char(hire_date,'yyyy')
+from employees
+group by to_char(hire_date,'yyyy')
+having count(*)>10;
+
+31.
+
+select department_id
+from employees
+where commission_pct is not null
+group by department_id
+having count(*)>5;
+
+32.
+
+select employee_id
+from job_history
+group by employee_id
+having count(job_id)>1;
+
+33.
+
+select job_id
+from job_history
+where to_date(end_date)-to_date(start_date)>100
+group by job_id
+having count(*)>3;
+
+34.
+
+select department_id,to_char(hire_date,'yyyy'),count(employee_id)
+from employees
+group by department_id, to_char(hire_date,'yyyy');
+
+35.
+
+select department_id,d.department_name
+from employees e join departments d
+using( department_id)
+group by department_id,department_name
+having count(e.employee_id)>5;
+
+36.
+
+update employees
+set salary=8000
+where employee_id=115 and salary<6000;
+
+37.
+
+insert into employees values 
+(1,'nirnay','mittal','abcc','1236','10-JUN-99','IT_PROG',90000,0.15,102,10);
+
+38.
+
+delete from departments 
+where department_id=270;
+
+39.
+
+update employees
+set job_id='IT_PROG'
+where department_id=10 and job_id not like 'IT%';
+
+40.
+
+INSERT INTO DEPARTMENTS values (12,'SPORTS',120,1200);
