@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		candidate form
+	</title>
+</head>
+<body>
+
+<table align="center" border="2" style="background: lightblue">
+	<form>
+		<tr>
+			<td>
+				<label>Name:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<input type="text" name="cname" maxlength="30" required>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Password:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<input type="Password" name="cpass" required>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Phone Number:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<input type="Number" name="cphone" maxlength="10" required >
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Gender<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+
+				<input type="radio" name="cgen" value="Male" checked >Male
+				<input type="radio" name="cgen" value="Female">Female
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Date of Birth:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<input type="date" name="cdate" required/>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Email:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<input type="Email" name="cmail" required >
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Highest Qualification:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<select >
+					<option selected>B.Tech</option>
+					<option>M.Tect</option>
+					<option>MBA</option>
+					<option>MCA</option>
+					<option>MSc</option>
+					<option>MA</option>
+					<option>BSC</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Courses Interested in:<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+
+				<input type="checkbox" name="cii" value="Java" selected >Java
+				<input type="checkbox" name="cii" value="HTML5">HTML5
+				<input type="checkbox" name="cii" value="CSS3">CSS3
+				<input type="checkbox" name="cii" value="Angular JS">Angular JS
+				<input type="checkbox" name="cii" value="JQuery">
+				JQuery
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Comments: (Mention External Certifications if any)</label>
+			</td>
+			<td>
+				<textarea rows="3"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>Upload Degree/External Certificates<sup style="color: red">*</sup></label>
+			</td>
+			<td>
+				<input type="file" name="cfile" >
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				<input type="submit" name="submit" value="submit Information">
+				<input type="reset" name="reset" value="clear">
+			</td>
+
+		</tr>
+
+	</form>
+</table>
+</body>
+</html>
